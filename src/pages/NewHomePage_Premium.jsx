@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../components/SEO';
 import './NewHomePage_Premium.css';
 
 // Register GSAP plugins
@@ -266,7 +267,50 @@ const NewHomePage = () => {
   }, []);
 
   return (
-    <div className="homeMainContainer" ref={heroRef}>
+    <>
+      <SEO
+        title="AI-Powered Business Solutions & Innovation"
+        description="Transform your business with IA Labs' cutting-edge AI solutions, custom software development, and digital innovation services. Expert consulting for Enterprise AI, Machine Learning, and Business Automation."
+        keywords="AI solutions, artificial intelligence, machine learning, business automation, custom software development, digital transformation, enterprise AI, AI consulting, business intelligence, data analytics, automation solutions"
+        canonicalUrl="/"
+        ogImage="/IA-Labs-Logo-Light (1).png"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "IA Labs",
+          "url": "https://ialabs.vercel.app",
+          "logo": "https://ialabs.vercel.app/IA-Labs-Logo-Light (1).png",
+          "description": "Leading AI solutions and custom software development company specializing in business automation and digital transformation.",
+          "foundingDate": "2023",
+          "industry": "Information Technology",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+          },
+          "sameAs": [
+            "https://linkedin.com/company/ialabs",
+            "https://twitter.com/ialabs"
+          ],
+          "services": [
+            {
+              "@type": "Service",
+              "name": "AI Consulting",
+              "description": "Expert artificial intelligence consulting and implementation services"
+            },
+            {
+              "@type": "Service", 
+              "name": "Custom Software Development",
+              "description": "Tailored software solutions for business needs"
+            },
+            {
+              "@type": "Service",
+              "name": "Business Automation",
+              "description": "Streamline operations with intelligent automation solutions"
+            }
+          ]
+        }}
+      />
+      <div className="homeMainContainer" ref={heroRef}>
       {/* Floating Particles */}
       <div className="homeParticlesContainer" ref={particlesRef}></div>
 
@@ -490,6 +534,7 @@ const NewHomePage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

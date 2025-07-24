@@ -3,6 +3,7 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../components/SEO';
 import './AboutPage.css';
 
 // Register GSAP plugins
@@ -270,7 +271,44 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className="aboutMainContainer" ref={heroRef}>
+    <>
+      <SEO
+        title="About IA Labs - AI Innovation Leaders"
+        description="Learn about IA Labs' mission to transform businesses through artificial intelligence and cutting-edge technology. Discover our story, team expertise, and commitment to delivering exceptional AI solutions."
+        keywords="about IA Labs, AI company, artificial intelligence team, technology innovation, AI experts, company story, digital transformation leaders, machine learning specialists"
+        canonicalUrl="/about"
+        ogImage="/IA-Labs-Logo-Light (1).png"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "IA Labs",
+            "description": "Leading artificial intelligence and software development company focused on business transformation through innovative technology solutions.",
+            "foundingDate": "2023",
+            "industry": "Artificial Intelligence",
+            "url": "https://ialabs.vercel.app",
+            "logo": "https://ialabs.vercel.app/IA-Labs-Logo-Light (1).png",
+            "mission": "To empower businesses worldwide with intelligent automation and cutting-edge AI solutions that drive growth and efficiency.",
+            "employees": {
+              "@type": "QuantitativeValue",
+              "value": "10-50"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            },
+            "expertise": [
+              "Artificial Intelligence",
+              "Machine Learning",
+              "Custom Software Development",
+              "Business Automation",
+              "Digital Transformation"
+            ]
+          }
+        }}
+      />
+      <div className="aboutMainContainer" ref={heroRef}>
       {/* Floating Particles */}
       <div className="aboutParticlesContainer" ref={particlesRef}></div>
 
@@ -499,6 +537,7 @@ const AboutPage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

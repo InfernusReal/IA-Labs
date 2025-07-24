@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 
 // Public pages
 import HomePage from './pages/HomePage'
@@ -35,7 +36,9 @@ const AppContent = () => {
 
 function App() {
   return (
-    <AppContent />
+    <HelmetProvider>
+      <AppContent />
+    </HelmetProvider>
   )
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SEO from '../components/SEO';
 import './NewServicesPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -307,7 +308,51 @@ const NewServicesPage = () => {
   );
 
   return (
-    <div ref={containerRef} className="services-main-container">
+    <>
+      <SEO
+        title="Professional Services & Pricing Plans"
+        description="Discover IA Labs' comprehensive service packages - from startup solutions to enterprise AI implementations. Transparent pricing for web development, AI consulting, and digital transformation services."
+        keywords="AI services pricing, web development packages, software development cost, AI consulting rates, enterprise solutions, startup packages, digital transformation pricing, custom software quotes"
+        canonicalUrl="/services"
+        ogImage="/IA-Labs-Logo-Light (1).png"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "provider": {
+            "@type": "Organization",
+            "name": "IA Labs",
+            "url": "https://ialabs.vercel.app"
+          },
+          "serviceType": "Information Technology Services",
+          "description": "Comprehensive AI and software development services with transparent pricing",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Starter Package",
+              "description": "Essential web solutions for startups and small businesses",
+              "price": "999",
+              "priceCurrency": "USD",
+              "category": "Web Development"
+            },
+            {
+              "@type": "Offer", 
+              "name": "Professional Package",
+              "description": "Advanced business solutions with AI integration",
+              "price": "2999",
+              "priceCurrency": "USD",
+              "category": "AI Solutions"
+            },
+            {
+              "@type": "Offer",
+              "name": "Enterprise Package", 
+              "description": "Custom enterprise solutions and consulting",
+              "category": "Enterprise AI",
+              "priceSpecification": "Contact for quote"
+            }
+          ]
+        }}
+      />
+      <div ref={containerRef} className="services-main-container">
       {/* Floating Particles */}
       <motion.div 
         className="servicesParticlesContainer" 
@@ -459,6 +504,7 @@ const NewServicesPage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

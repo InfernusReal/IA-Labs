@@ -1,11 +1,15 @@
 {
-  "name": "IA-Labs - Premium Web Development & SaaS Solutions v2",
-  "short_name": "IA-Labs v2",
-  "description": "Build your digital future with IA-Labs. We craft stunning websites and powerful SaaS solutions with one-time payments and premium fast-track delivery.",
+  "name": "IA Labs - AI-Powered Business Solutions & Innovation",
+  "short_name": "IA Labs",
+  "description": "Transform your business with IA Labs' cutting-edge AI solutions, custom software development, and digital innovation services. Expert consulting for Enterprise AI, Machine Learning, and Business Automation.",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#0a0a0a",
   "theme_color": "#d4af37",
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en",
+  "scope": "/",
   "icons": [
     {
       "src": "/IA-Labs-Logo-Dark (1).png?v=3",

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SEO from '../components/SEO';
 import './ContactPage.css';
 
 // Register GSAP plugins
@@ -188,7 +189,56 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="contactMainContainer" ref={heroRef}>
+    <>
+      <SEO
+        title="Contact IA Labs - Get Your AI Project Quote"
+        description="Ready to transform your business with AI? Contact IA Labs for custom software development, AI consulting, and digital transformation services. Get your free consultation and project quote today."
+        keywords="contact IA Labs, AI consultation, get quote, software development inquiry, AI project estimate, business automation consultation, custom development contact"
+        canonicalUrl="/contact"
+        ogImage="/IA-Labs-Logo-Light (1).png"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "IA Labs",
+            "url": "https://ialabs.vercel.app",
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "Sales",
+                "availableLanguage": "English",
+                "contactOption": "TollFree"
+              },
+              {
+                "@type": "ContactPoint", 
+                "contactType": "Customer Service",
+                "availableLanguage": "English"
+              },
+              {
+                "@type": "ContactPoint",
+                "contactType": "Technical Support", 
+                "availableLanguage": "English"
+              }
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            },
+            "areaServed": "Worldwide",
+            "serviceArea": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.7128",
+                "longitude": "-74.0060"
+              },
+              "geoRadius": "20000"
+            }
+          }
+        }}
+      />
+      <div className="contactMainContainer" ref={heroRef}>
       {/* Floating Particles */}
       <div className="contactParticlesContainer" ref={particlesRef}></div>
 
@@ -403,6 +453,7 @@ const ContactPage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
