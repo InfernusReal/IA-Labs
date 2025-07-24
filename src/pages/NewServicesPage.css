@@ -711,7 +711,7 @@
   /* Hero section mobile optimizations */
   .services-hero-section {
     min-height: 100vh;
-    padding: 120px 1rem 40px;
+    padding: 80px 1rem 40px;
   }
 
   .services-hero-content {
@@ -908,6 +908,23 @@
     padding: 0.3rem 0.8rem;
     top: -0.5rem;
     right: -0.5rem;
+  }
+}
+
+/* Extra Small Mobile - Below 380px */
+@media (max-width: 379px) {
+  .services-hero-section {
+    padding: 70px 1rem 30px !important;
+  }
+
+  .services-hero-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .services-hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
   }
 }
 
