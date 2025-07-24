@@ -840,14 +840,14 @@
 
   .homeHeroTitle {
     font-size: 2rem;
-    min-height: 120px;
+    min-height: 100px;
     margin-bottom: 1.5rem;
     line-height: 1.2;
   }
 
   .homeHeroSubtitle {
     font-size: 0.9rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     line-height: 1.6;
     padding: 0 0.5rem;
   }
@@ -1072,5 +1072,28 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.2rem;
+  }
+}
+
+/* Extra Small Mobile - Below 400px */
+@media (max-width: 399px) {
+  .homeHeroSection {
+    padding-top: 80px !important;
+    padding-bottom: 30px;
+  }
+
+  .homeHeroTitle {
+    min-height: 80px !important;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+  .homeHeroSubtitle {
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .homeHeroButtons {
+    margin-bottom: 1rem;
   }
 }
