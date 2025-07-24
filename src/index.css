@@ -1,0 +1,342 @@
+
+
+:root {
+  font-family: "Comfortaa", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Default to dark mode variables - Premium Dark Gold */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #1f1f1f;
+  --text-primary: #f5f5f5;
+  --text-secondary: #e0e0e0;
+  --border-color: #8b7355;
+  --border-subtle: #6b5b47;
+  --shadow: none;
+  --shadow-hover: none;
+  --glow: 0 0 0 1px rgba(212, 175, 55, 0.4);
+  --glow-hover: 0 0 0 2px rgba(212, 175, 55, 0.6), 0 0 25px rgba(212, 175, 55, 0.15);
+  --accent: #d4af37;
+  --accent-hover: #b8941f;
+  --accent-secondary: #f1c40f;
+  --accent-secondary-hover: #f39c12;
+  --gold-gradient: linear-gradient(135deg, #d4af37, #f1c40f, #ffd700);
+  --gold-text: linear-gradient(135deg, #b8941f, #d4af37, #f1c40f);
+
+  color-scheme: dark light;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Light mode variables - Premium Gold Theme */
+:root:not(.dark) {
+  --bg-primary: #fefefe;
+  --bg-secondary: #fefbf3;
+  --bg-tertiary: #fef9f0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #2a2a2a;
+  --border-color: #f4d03f;
+  --border-subtle: #fdeaa7;
+  --shadow: none;
+  --shadow-hover: none;
+  --glow: 0 0 0 1px rgba(212, 175, 55, 0.3);
+  --glow-hover: 0 0 0 2px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.1);
+  --accent: #d4af37;
+  --accent-hover: #b8941f;
+  --accent-secondary: #f1c40f;
+  --accent-secondary-hover: #f39c12;
+  --gold-gradient: linear-gradient(135deg, #d4af37, #f1c40f, #ffd700);
+  --gold-text: linear-gradient(135deg, #b8941f, #d4af37, #f1c40f);
+
+  color-scheme: light dark;
+}
+
+/* Dark mode variables - Premium Dark Gold */
+.dark {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #1f1f1f;
+  --text-primary: #f5f5f5;
+  --text-secondary: #e0e0e0;
+  --border-color: #8b7355;
+  --border-subtle: #6b5b47;
+  --shadow: none;
+  --shadow-hover: none;
+  --glow: 0 0 0 1px rgba(212, 175, 55, 0.4);
+  --glow-hover: 0 0 0 2px rgba(212, 175, 55, 0.6), 0 0 25px rgba(212, 175, 55, 0.15);
+  --accent: #d4af37;
+  --accent-hover: #f1c40f;
+  --accent-secondary: #ffd700;
+  --accent-secondary-hover: #ffed4e;
+  --gold-gradient: linear-gradient(135deg, #d4af37, #f1c40f, #ffd700);
+  --gold-text: linear-gradient(135deg, #d4af37, #f1c40f, #ffd700);
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global dark mode styles */
+.dark body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+p {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Buttons - Premium Gold Design */
+button {
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  padding: 0.8em 1.8em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background: var(--gold-gradient);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  border-color: var(--accent);
+  background: var(--gold-gradient);
+  color: var(--text-primary);
+  box-shadow: var(--glow-hover);
+  transform: translateY(-2px);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: var(--glow-hover);
+}
+
+/* Form elements */
+input, textarea, select {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5em;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.2);
+}
+
+/* Cards and containers */
+.card, .container {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #d4af37, #f1c40f);
+  border-radius: 10px;
+  border: 2px solid var(--bg-secondary);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #b8941f, #d4af37);
+  border-color: var(--bg-primary);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg-secondary);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4af37 var(--bg-secondary);
+}
+
+/* Dark mode scrollbar adjustments */
+.dark ::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #b8941f, #d4af37);
+  border: 2px solid var(--bg-primary);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #d4af37, #f1c40f);
+  border-color: var(--bg-secondary);
+}
+
+.dark ::-webkit-scrollbar-corner {
+  background: var(--bg-primary);
+}
+
+.dark * {
+  scrollbar-color: #b8941f var(--bg-primary);
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+.dark ::selection {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+/* ===== CREATIVE FONT APPLICATIONS ===== */
+
+/* Bungee for Brand Identity and Key Headlines */
+.gradient-text,
+.stat-number,
+.footer-brand h3,
+.navbar-brand h2 {
+  font-family: 'Bungee', cursive !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+/* Hero title with Comfortaa for better readability */
+.hero-title {
+  font-family: 'Comfortaa', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* CTA sections with Comfortaa for cleaner look */
+.cta-section h2,
+.services-cta-section h2 {
+  font-family: 'Comfortaa', sans-serif !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Special Bungee styling for gradient text */
+.gradient-text {
+  letter-spacing: 0.15em !important;
+}
+
+/* Pacifico for Stylish Section Headers */
+.section-title,
+.service-card h3,
+.feature-text h4,
+.footer-column h4 {
+  font-family: 'Pacifico', cursive !important;
+  font-weight: 400 !important;
+  text-transform: capitalize !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Comfortaa for Body Text (already set in root) */
+.hero-subtitle,
+.service-card p,
+.feature-text p,
+.cta-button,
+.service-explore-btn,
+.stat-label {
+  font-family: 'Comfortaa', sans-serif !important;
+}
+
+/* Ensure smooth transitions for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

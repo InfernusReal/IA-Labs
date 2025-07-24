@@ -1,0 +1,465 @@
+/* AboutNavBar.css - Insanely Sexy Dark Mode Navbar */
+
+.aboutNavbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  overflow: hidden;
+}
+
+.aboutNavbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.98) 0%,
+    rgba(10, 10, 10, 0.95) 50%,
+    rgba(0, 0, 0, 0.98) 100%
+  );
+  z-index: -1;
+}
+
+.aboutNavbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.3) 20%,
+    rgba(212, 175, 55, 0.8) 50%,
+    rgba(212, 175, 55, 0.3) 80%,
+    transparent 100%
+  );
+  transform: scaleX(0);
+  transition: transform 0.6s ease;
+}
+
+.aboutNavbar:hover::after {
+  transform: scaleX(1);
+}
+
+.aboutNavbarScrolled {
+  background: rgba(0, 0, 0, 0.98);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.aboutNavbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutNavbarLeft {
+  display: flex;
+  align-items: center;
+}
+
+.aboutNavbarLogo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.aboutNavbarLogo:hover {
+  transform: scale(1.05);
+}
+
+.aboutNavbarLogoImage {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
+  transition: all 0.3s ease;
+}
+
+.aboutNavbarLogo:hover .aboutNavbarLogoImage {
+  filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.8));
+}
+
+.aboutNavbarCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.aboutNavbarMenu {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aboutNavbarLink {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.aboutNavbarLinkText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aboutNavbarLinkUnderline {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #d4af37, #f4d03f);
+  transition: all 0.4s ease;
+  border-radius: 2px;
+}
+
+.aboutNavbarLink:hover .aboutNavbarLinkText {
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+.aboutNavbarLink:hover .aboutNavbarLinkUnderline {
+  width: 100%;
+}
+
+.aboutNavbarLinkActive .aboutNavbarLinkText {
+  color: #d4af37;
+}
+
+.aboutNavbarLinkActive .aboutNavbarLinkUnderline {
+  width: 100%;
+}
+
+.aboutNavbarRight {
+  display: flex;
+  align-items: center;
+}
+
+.aboutNavbarCtaButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  color: #000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutNavbarCtaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.aboutNavbarCtaButton:hover::before {
+  left: 100%;
+}
+
+.aboutNavbarCtaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.aboutNavbarCtaText {
+  position: relative;
+  z-index: 1;
+}
+
+.aboutNavbarCtaIcon {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.aboutNavbarCtaButton:hover .aboutNavbarCtaIcon {
+  transform: translateX(3px);
+}
+
+.aboutNavbarToggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  padding: 0.5rem;
+}
+
+.aboutNavbarToggleLine {
+  width: 25px;
+  height: 3px;
+  background: #d4af37;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.aboutNavbarToggleLineOpen:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.aboutNavbarToggleLineOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.aboutNavbarToggleLineOpen:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Sexy Background Effects */
+.aboutNavbarBgEffects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.aboutNavbarBgEffect1 {
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 20%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.05) 50%,
+    transparent 100%
+  );
+  animation: aboutNavbarEffect1 8s ease-in-out infinite;
+}
+
+.aboutNavbarBgEffect2 {
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 20%;
+  height: 200%;
+  background: linear-gradient(
+    -45deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.05) 50%,
+    transparent 100%
+  );
+  animation: aboutNavbarEffect2 10s ease-in-out infinite reverse;
+}
+
+.aboutNavbarBgEffect3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.08) 0%,
+    transparent 70%
+  );
+  animation: aboutNavbarEffect3 12s ease-in-out infinite;
+}
+
+@keyframes aboutNavbarEffect1 {
+  0%, 100% { transform: translateX(-20px); opacity: 0.3; }
+  50% { transform: translateX(20px); opacity: 0.8; }
+}
+
+@keyframes aboutNavbarEffect2 {
+  0%, 100% { transform: translateX(20px); opacity: 0.3; }
+  50% { transform: translateX(-20px); opacity: 0.8; }
+}
+
+@keyframes aboutNavbarEffect3 {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.4; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .aboutNavbarContainer {
+    padding: 0 1.5rem;
+  }
+  
+  .aboutNavbarMenu {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutNavbarCenter {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(25px);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: 999;
+  }
+  
+  .aboutNavbarMenuOpen {
+    transform: translateX(0);
+  }
+  
+  .aboutNavbarMenu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 3rem;
+  }
+  
+  .aboutNavbarLink {
+    padding: 1rem 2rem;
+  }
+  
+  .aboutNavbarLinkText {
+    font-size: 1.2rem;
+  }
+  
+  .aboutNavbarToggle {
+    display: flex;
+  }
+  
+  .aboutNavbarRight {
+    display: none;
+  }
+  
+  .aboutNavbarContainer {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutNavbar {
+    height: 70px;
+  }
+  
+  .aboutNavbarCenter {
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+  
+  .aboutNavbarLogoImage {
+    height: 40px;
+  }
+  
+  .aboutNavbarMenu {
+    gap: 2.5rem;
+  }
+  
+  .aboutNavbarLinkText {
+    font-size: 1.1rem;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced hover effects */
+.aboutNavbarLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.aboutNavbarLink:hover::before {
+  opacity: 1;
+}
+
+/* Glowing effect on active link */
+.aboutNavbarLinkActive::before {
+  opacity: 0.5;
+}
+
+/* Enhanced CTA button glow */
+.aboutNavbarCtaButton {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.aboutNavbarCtaButton:hover {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+/* Navbar entrance animation */
+.aboutNavbar {
+  animation: aboutNavbarSlideIn 0.8s ease-out;
+}
+
+@keyframes aboutNavbarSlideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hide AboutNavBar on mobile screens */
+@media (max-width: 768px) {
+  .aboutNavbar {
+    display: none !important;
+  }
+}

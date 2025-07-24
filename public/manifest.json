@@ -1,0 +1,31 @@
+{
+  "name": "IA-Labs - Premium Web Development & SaaS Solutions v2",
+  "short_name": "IA-Labs v2",
+  "description": "Build your digital future with IA-Labs. We craft stunning websites and powerful SaaS solutions with one-time payments and premium fast-track delivery.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d4af37",
+  "icons": [
+    {
+      "src": "/IA-Labs-Logo-Dark (1).png?v=3",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/IA-Labs-Logo-Dark (1).png?v=3",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/IA-Labs-Logo-Dark (1).png?v=3",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/IA-Labs-Logo-Dark (1).png?v=3",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

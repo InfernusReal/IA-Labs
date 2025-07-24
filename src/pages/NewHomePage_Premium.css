@@ -1,0 +1,1008 @@
+/* NewHomePage_Premium.css - Premium Design Following AboutPage Pattern */
+
+.homeMainContainer {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0a0a0a 100%);
+  overflow-x: hidden;
+}
+
+.homeParticlesContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.homeParticle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #d4af37, #f4d03f);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: homeParticleFloat 4s ease-in-out infinite;
+}
+
+@keyframes homeParticleFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Hero Section */
+.homeHeroSection {
+  position: relative;
+  height: 100vh;
+  min-height: 900px;
+  max-height: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.homeHeroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.homeHeroVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.homeHeroVideo.homeVideoActive {
+  opacity: 1;
+}
+
+.homeHeroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  z-index: 3;
+}
+
+.homeHeroContent {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeHeroTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.homeHeroTitle {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Typewriter line - fixed height to prevent layout shift */
+.homeTypewriterLine {
+  min-height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.2em;
+}
+
+/* Static line - always stays in place */
+.homeStaticLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .homeHeroTitle {
+    min-height: 140px;
+  }
+}
+
+.homeGradientText {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: homeGradientShift 4s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes homeGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.homeHeroSubtitle {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin-bottom: 3.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homeHeroButtons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.homePrimaryButton {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+  color: #000;
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.homePrimaryButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.homePrimaryButton:hover::before {
+  left: 100%;
+}
+
+.homePrimaryButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.6);
+}
+
+.homeSecondaryButton {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 2px solid #d4af37;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  background: transparent;
+  color: #d4af37;
+  overflow: hidden;
+}
+
+.homeSecondaryButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.homeSecondaryButton:hover::before {
+  left: 0;
+}
+
+.homeSecondaryButton:hover {
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.homeButtonArrow {
+  transition: transform 0.3s ease;
+}
+
+.homePrimaryButton:hover .homeButtonArrow,
+.homeSecondaryButton:hover .homeButtonArrow {
+  transform: translateX(5px);
+}
+
+.homeHeroStats {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.homeStat {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  min-width: 150px;
+}
+
+.homeStat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+}
+
+.homeStatNumber {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.homeStatLabel {
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Section Styles */
+.homeSectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.homeSectionHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.homeSectionTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.homeSectionSubtitle {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Services Section */
+.homeServicesSection {
+  position: relative;
+  padding: 10rem 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  overflow: hidden;
+}
+
+.homeServicesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.homeServicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+  align-items: stretch;
+}
+
+.homeServiceCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 25px;
+  padding: 3rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: homeServiceFloat 6s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@keyframes homeServiceFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.homeServiceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.homeServiceCard:hover::before {
+  opacity: 1;
+}
+
+.homeServiceCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(212, 175, 55, 0.3);
+}
+
+.homeServiceAccent {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.homeServiceAccent::before {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, transparent 100%);
+}
+
+.homeServiceIcon {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.homeServiceTitle {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.homeServiceDescription {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.homeServiceFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+}
+
+.homeServiceFeature {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.homeFeatureCheck {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: -2rem;
+  margin-right: 0.5rem;
+}
+
+.homeServiceButton {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+/* Features Section */
+.homeFeaturesSection {
+  position: relative;
+  padding: 10rem 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+  overflow: hidden;
+}
+
+.homeFeaturesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(45deg, transparent 0%, rgba(212, 175, 55, 0.05) 50%, transparent 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="homeGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23homeGrid)"/></svg>');
+  pointer-events: none;
+  z-index: 1;
+}
+
+.homeFeaturesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.homeFeatureCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 25px;
+  padding: 2.5rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.homeFeatureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.homeFeatureCard:hover::before {
+  opacity: 1;
+}
+
+.homeFeatureCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
+}
+
+.homeFeatureIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.homeFeatureTitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.homeFeatureDescription {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.homeFeatureBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+/* CTA Section */
+.homeCtaSection {
+  position: relative;
+  padding: 10rem 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  overflow: hidden;
+}
+
+.homeCtaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.homeCtaContent {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+.homeCtaTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.homeCtaSubtitle {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin-bottom: 3.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homeCtaButtons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.homeLargeButton {
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+}
+
+.homeCtaStats {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.homeCtaStat {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  min-width: 150px;
+}
+
+.homeCtaStat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .homeServicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .homeFeaturesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .homeHeroButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .homePrimaryButton,
+  .homeSecondaryButton {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .homeServicesGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .homeFeaturesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .homeCtaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .homeServiceCard {
+    padding: 2rem;
+  }
+  
+  .homeFeatureCard {
+    padding: 2rem;
+  }
+  
+  .homeHeroStats {
+    gap: 1.5rem;
+  }
+  
+  .homeCtaStats {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .homeHeroTitle {
+    font-size: 2.5rem;
+    flex-direction: column;
+  }
+  
+  .homeServiceCard {
+    padding: 1.5rem;
+  }
+  
+  .homeFeatureCard {
+    padding: 1.5rem;
+  }
+  
+  .homeStat {
+    padding: 1rem;
+    min-width: 120px;
+  }
+  
+  .homeCtaStat {
+    padding: 1rem;
+    min-width: 120px;
+  }
+}
+
+/* Ultra Mobile - Below 430px */
+@media (max-width: 430px) {
+  /* Main container adjustments */
+  .homeMainContainer {
+    overflow-x: hidden;
+  }
+
+  /* Hero section mobile optimizations */
+  .homeHeroSection {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .homeHeroContent {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .homeHeroTitle {
+    font-size: 2rem;
+    min-height: 120px;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .homeHeroSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  .homeHeroButtons {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .homePrimaryButton,
+  .homeSecondaryButton {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 40px;
+  }
+
+  .homeHeroStats {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .homeStat {
+    padding: 0.8rem;
+    min-width: 100px;
+    flex: 1;
+    max-width: 120px;
+  }
+
+  .homeStatNumber {
+    font-size: 1.4rem;
+  }
+
+  .homeStatLabel {
+    font-size: 0.8rem;
+  }
+
+  /* Section containers */
+  .homeSectionContainer {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .homeSectionHeader {
+    margin-bottom: 3rem;
+  }
+
+  .homeSectionTitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .homeSectionSubtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  /* Services section mobile */
+  .homeServicesSection {
+    padding: 6rem 0;
+  }
+
+  .homeServicesGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+
+  .homeServiceCard {
+    padding: 1.5rem;
+    border-radius: 20px;
+    margin: 0 0.5rem;
+  }
+
+  .homeServiceIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .homeServiceTitle {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .homeServiceDescription {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .homeServiceFeatures {
+    margin-bottom: 2rem;
+  }
+
+  .homeServiceFeature {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+    padding-left: 1.5rem;
+  }
+
+  .homeFeatureCheck {
+    font-size: 1rem;
+    margin-left: -1.5rem;
+  }
+
+  .homeServiceButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 40px;
+    width: 100%;
+  }
+
+  /* Features section mobile */
+  .homeFeaturesSection {
+    padding: 6rem 0;
+  }
+
+  .homeFeaturesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .homeFeatureCard {
+    padding: 1.5rem;
+    border-radius: 20px;
+    margin: 0 0.5rem;
+  }
+
+  .homeFeatureIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .homeFeatureTitle {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .homeFeatureDescription {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* CTA section mobile */
+  .homeCtaSection {
+    padding: 6rem 0;
+  }
+
+  .homeCtaTitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .homeCtaSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  .homeCtaButtons {
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .homeLargeButton {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .homeCtaStats {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .homeCtaStat {
+    padding: 0.8rem;
+    min-width: 100px;
+    flex: 1;
+    max-width: 120px;
+  }
+
+  /* Particle adjustments */
+  .homeParticle {
+    width: 3px;
+    height: 3px;
+  }
+
+  /* Typography adjustments */
+  .homeGradientText {
+    display: inline;
+    word-break: break-word;
+  }
+
+  /* Video background adjustments */
+  .homeHeroVideo {
+    object-position: center center;
+  }
+
+  /* Spacing and layout fixes */
+  .homeTypewriterLine {
+    min-height: 1em;
+    margin-bottom: 0.3em;
+  }
+
+  .homeStaticLine {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+}

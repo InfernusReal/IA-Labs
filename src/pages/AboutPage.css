@@ -1,0 +1,1388 @@
+/* AboutPage.css - Masterpiece Design with Unique Class Names */
+
+.aboutMainContainer {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0a0a0a 100%);
+  overflow-x: hidden;
+}
+
+.aboutParticlesContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.aboutParticle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #d4af37, #f4d03f);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: aboutParticleFloat 4s ease-in-out infinite;
+}
+
+@keyframes aboutParticleFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Hero Section */
+.aboutHeroSection {
+  position: relative;
+  height: 100vh;
+  min-height: 900px;
+  max-height: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.aboutHeroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.aboutHeroVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.aboutHeroVideo.aboutVideoActive {
+  opacity: 1;
+}
+
+.aboutHeroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  z-index: 3;
+}
+
+.aboutHeroContent {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -100px;
+}
+
+.aboutLogoMain {
+  height: 120px;
+  width: auto;
+  margin-bottom: 3rem;
+  margin-top: 10rem;
+  filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
+  flex-shrink: 0;
+  position: relative;
+  top: 4rem;
+}
+
+.aboutHeroTitle {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.aboutGradientText {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: aboutGradientShift 4s ease-in-out infinite;
+}
+
+@keyframes aboutGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.aboutTypewriterContainer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.aboutTypewriterText {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: #d4af37;
+  font-weight: 600;
+  min-width: 350px;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+.aboutTypewriterCursor {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: #d4af37;
+  animation: aboutCursorBlink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes aboutCursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.aboutHeroSubtitle {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin-bottom: 3.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutHeroButtons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  margin-top: -1.5rem;
+}
+
+.aboutCtaButton {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.aboutCtaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.aboutCtaButton:hover::before {
+  left: 100%;
+}
+
+.aboutCtaPrimary {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+  color: #000;
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.aboutCtaPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.6);
+}
+
+.aboutCtaSecondary {
+  background: transparent;
+  color: white;
+  border: 2px solid #d4af37;
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+}
+
+.aboutCtaSecondary:hover {
+  background: #d4af37;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
+}
+
+.aboutCtaLarge {
+  padding: 1.5rem 3rem;
+  font-size: 1.3rem;
+}
+
+/* Section Styles */
+.aboutSectionTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.aboutSectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  border-radius: 2px;
+}
+
+.aboutSectionSubtitle {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Story Section */
+.aboutStorySection {
+  padding: 10rem 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  position: relative;
+  margin-top: 0;
+}
+
+.aboutStorySection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.aboutStoryContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutStoryHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.aboutStoryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.aboutStoryCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 25px;
+  padding: 3rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutStoryCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.aboutStoryCard:hover::before {
+  opacity: 1;
+}
+
+.aboutStoryCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(212, 175, 55, 0.3);
+}
+
+.aboutStoryCardTitle {
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutStoryCardDesc {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutStoryHighlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutHighlightItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.aboutHighlightItem:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateX(10px);
+}
+
+.aboutHighlightIcon {
+  font-size: 1.5rem;
+}
+
+.aboutHighlightText {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.aboutStoryVisual {
+  position: relative;
+}
+
+.aboutStoryImageContainer {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.aboutStoryImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.aboutStoryImageContainer:hover .aboutStoryImage {
+  transform: scale(1.05);
+}
+
+.aboutStoryImageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 2rem;
+}
+
+.aboutStoryStats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.aboutStatItem {
+  text-align: center;
+}
+
+.aboutStatNumber {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #d4af37;
+  line-height: 1;
+}
+
+.aboutStatLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5rem;
+}
+
+/* Services Section */
+.aboutServicesSection {
+  padding: 10rem 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+  position: relative;
+}
+
+.aboutServicesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(45deg, transparent 0%, rgba(212, 175, 55, 0.05) 50%, transparent 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="aboutGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23aboutGrid)"/></svg>');
+  pointer-events: none;
+}
+
+.aboutServicesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutServicesHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.aboutExpertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.aboutExpertiseCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 25px;
+  padding: 3rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutExpertiseCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.aboutExpertiseCard:hover::before {
+  opacity: 1;
+}
+
+.aboutExpertiseCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(212, 175, 55, 0.3);
+}
+
+.aboutExpertiseIcon {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutExpertiseTitle {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutExpertiseDesc {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutExpertiseFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutExpertiseFeature {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 2rem;
+  font-weight: 500;
+}
+
+.aboutExpertiseFeature::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Team Section */
+.aboutTeamSection {
+  padding: 10rem 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  position: relative;
+}
+
+.aboutTeamContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutTeamHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.aboutTeamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.aboutTeamCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 25px;
+  padding: 2.5rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutTeamCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.aboutTeamCard:hover::before {
+  opacity: 1;
+}
+
+.aboutTeamCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.aboutTeamImageContainer {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  overflow: hidden;
+  border: 4px solid #d4af37;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.aboutTeamImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.aboutTeamImageContainer:hover .aboutTeamImage {
+  transform: scale(1.1);
+}
+
+.aboutTeamName {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutTeamRole {
+  color: #d4af37;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutTeamSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutTeamSkill {
+  background: rgba(212, 175, 55, 0.2);
+  color: #d4af37;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.aboutTeamSkill:hover {
+  background: rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Process Section */
+.aboutProcessSection {
+  padding: 10rem 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+  position: relative;
+}
+
+.aboutProcessContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.aboutProcessHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.aboutWorkflowContainer {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.aboutWorkflowContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #d4af37, rgba(212, 175, 55, 0.2));
+}
+
+.aboutWorkflowStep {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.aboutWorkflowStep.aboutWorkflowLeft {
+  flex-direction: row-reverse;
+}
+
+.aboutWorkflowStep.aboutWorkflowLeft .aboutWorkflowContent {
+  margin-right: 4rem;
+  text-align: right;
+}
+
+.aboutWorkflowStep.aboutWorkflowRight .aboutWorkflowContent {
+  margin-left: 4rem;
+}
+
+.aboutWorkflowNumber {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  color: #000;
+  font-weight: 800;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+  z-index: 3;
+}
+
+.aboutWorkflowContent {
+  flex: 1;
+  max-width: 450px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 25px;
+  padding: 2.5rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+.aboutWorkflowContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(212, 175, 55, 0.2);
+}
+
+.aboutWorkflowIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.aboutWorkflowTitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.aboutWorkflowDesc {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* CTA Section */
+.aboutCtaSection {
+  position: relative;
+  padding: 10rem 0;
+  overflow: hidden;
+}
+
+.aboutCtaBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.aboutCtaVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutCtaOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  z-index: 2;
+}
+
+.aboutCtaContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.aboutCtaContent {
+  text-align: center;
+  color: white;
+}
+
+.aboutCtaTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.aboutCtaSubtitle {
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin-bottom: 3.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutCtaButtons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Mockup Visual - No Card Styling */
+.aboutStoryVisual.aboutMockupVisual {
+  background: none;
+  border: none;
+  border-radius: 0;
+  backdrop-filter: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.aboutStoryVisual.aboutMockupVisual .aboutStoryImageContainer {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.aboutStoryVisual.aboutMockupVisual .aboutStoryImage {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.aboutStoryVisual.aboutMockupVisual:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.aboutStoryVisual.aboutMockupVisual .aboutStoryImageContainer:hover .aboutStoryImage {
+  transform: none;
+}
+
+/* Responsive Design */
+
+/* Tablet range - keep desktop timeline layout */
+@media (max-width: 1245px) and (min-width: 1025px) {
+  .aboutStoryGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .aboutStoryGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .aboutWorkflowContainer::before {
+    display: none;
+  }
+  
+  .aboutWorkflowNumber {
+    position: relative;
+    left: auto;
+    transform: none;
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+    margin: 0 auto 1.5rem auto;
+  }
+  
+  .aboutWorkflowStep {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .aboutWorkflowStep.aboutWorkflowLeft {
+    flex-direction: column;
+  }
+  
+  .aboutWorkflowStep.aboutWorkflowLeft .aboutWorkflowContent {
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .aboutWorkflowStep.aboutWorkflowRight .aboutWorkflowContent {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .aboutWorkflowContent {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutHeroButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .aboutCtaButton {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .aboutExpertiseGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .aboutTeamGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .aboutCtaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .aboutStoryCard {
+    padding: 2rem;
+  }
+  
+  .aboutExpertiseCard {
+    padding: 2rem;
+  }
+  
+  .aboutTeamCard {
+    padding: 2rem;
+  }
+  
+  .aboutWorkflowContent {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutHeroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .aboutTypewriterText {
+    font-size: 1rem;
+    min-width: 280px;
+  }
+  
+  .aboutHeroSubtitle {
+    font-size: 1rem;
+  }
+  
+  .aboutSectionTitle {
+    font-size: 2rem;
+  }
+  
+  .aboutStoryCard {
+    padding: 1.5rem;
+  }
+  
+  .aboutExpertiseCard {
+    padding: 1.5rem;
+  }
+  
+  .aboutTeamCard {
+    padding: 1.5rem;
+  }
+  
+  .aboutWorkflowContent {
+    padding: 1.5rem;
+  }
+}
+
+/* Ultra Mobile - Below 400px */
+@media (max-width: 400px) {
+  /* Main container adjustments */
+  .aboutMainContainer {
+    overflow-x: hidden;
+  }
+
+  /* Hero section mobile optimizations */
+  .aboutHeroSection {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .aboutHeroContent {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .aboutLogoMain {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutHeroTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .aboutTypewriterContainer {
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutTypewriterText {
+    font-size: 0.9rem;
+    min-width: 250px;
+  }
+
+  .aboutHeroSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  .aboutHeroButtons {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutCtaButton {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 40px;
+  }
+
+  /* Section containers */
+  .aboutStoryContainer,
+  .aboutServicesContainer,
+  .aboutProcessContainer,
+  .aboutCtaContainer {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  .aboutStoryHeader,
+  .aboutServicesHeader,
+  .aboutProcessHeader {
+    margin-bottom: 3rem;
+  }
+
+  .aboutSectionTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .aboutSectionSubtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  /* Story section mobile */
+  .aboutStorySection {
+    padding: 6rem 0;
+  }
+
+  .aboutStoryGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .aboutStoryCard {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+
+  .aboutStoryCardTitle {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .aboutStoryCardDesc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutStoryHighlights {
+    gap: 1rem;
+  }
+
+  .aboutHighlightText {
+    font-size: 0.85rem;
+  }
+
+  .aboutStoryImageContainer {
+    margin: 0 0.5rem;
+  }
+
+  .aboutStoryImage {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Services section mobile */
+  .aboutServicesSection {
+    padding: 6rem 0;
+  }
+
+  .aboutExpertiseGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .aboutExpertiseCard {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+
+  .aboutExpertiseIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .aboutExpertiseTitle {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .aboutExpertiseDesc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutExpertiseFeatures {
+    gap: 0.5rem;
+  }
+
+  .aboutExpertiseFeature {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Process section mobile */
+  .aboutProcessSection {
+    padding: 6rem 0;
+  }
+
+  .aboutWorkflowContainer {
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .aboutWorkflowContainer::before {
+    left: 25px; /* Adjust for smaller screens */
+    width: 2px;
+  }
+
+  .aboutWorkflowStep {
+    margin: 0 0.5rem;
+    padding-left: 70px; /* Adjust padding for smaller timeline */
+    margin-bottom: 3rem;
+  }
+
+  .aboutWorkflowNumber {
+    left: 25px;
+    font-size: 0.9rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .aboutWorkflowContent {
+    padding: 1.5rem;
+  }
+
+  .aboutWorkflowIcon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .aboutWorkflowTitle {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .aboutWorkflowDesc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* CTA section mobile */
+  .aboutCtaSection {
+    padding: 6rem 0;
+  }
+
+  .aboutCtaTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .aboutCtaSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  .aboutCtaButtons {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutCtaLarge {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Typography adjustments */
+  .aboutGradientText {
+    display: inline;
+    word-break: break-word;
+  }
+
+  /* Video background adjustments */
+  .aboutHeroVideo,
+  .aboutCtaVideo {
+    object-position: center center;
+  }
+
+  /* Particle adjustments */
+  .aboutParticle {
+    width: 3px;
+    height: 3px;
+  }
+}
+
+/* Dark/Light Theme Support */
+.light .aboutMainContainer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+}
+
+.light .aboutSectionTitle,
+.light .aboutHeroTitle,
+.light .aboutStoryCardTitle,
+.light .aboutExpertiseTitle,
+.light .aboutTeamName,
+.light .aboutWorkflowTitle,
+.light .aboutCtaTitle {
+  color: #333;
+}
+
+.light .aboutHeroSubtitle,
+.light .aboutSectionSubtitle,
+.light .aboutStoryCardDesc,
+.light .aboutExpertiseDesc,
+.light .aboutWorkflowDesc,
+.light .aboutCtaSubtitle {
+  color: rgba(51, 51, 51, 0.8);
+}
+
+.light .aboutStoryCard,
+.light .aboutExpertiseCard,
+.light .aboutTeamCard,
+.light .aboutWorkflowContent {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .aboutHeroOverlay,
+.light .aboutCtaOverlay {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+}
+
+.light .aboutHighlightItem {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .aboutExpertiseFeature {
+  color: rgba(51, 51, 51, 0.8);
+}
+
+.light .aboutTeamRole {
+  color: #b8860b;
+}
+
+.light .aboutTeamSkill {
+  background: rgba(184, 134, 11, 0.2);
+  color: #b8860b;
+  border: 1px solid rgba(184, 134, 11, 0.3);
+}

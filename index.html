@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- SEO Meta Tags -->
+    <title>IA-Labs - Premium Web Development & SaaS Solutions</title>
+    <meta name="description" content="Build your digital future with IA-Labs. We craft stunning websites and powerful SaaS solutions with one-time payments and premium fast-track delivery." />
+    <meta name="keywords" content="web development, SaaS solutions, custom websites, fast delivery, one-time payment, premium development, digital agency" />
+    <meta name="author" content="IA-Labs" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="IA-Labs - Premium Web Development & SaaS Solutions" />
+    <meta property="og:description" content="Build your digital future with IA-Labs. We craft stunning websites and powerful SaaS solutions with one-time payments and premium fast-track delivery." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ia-labs.com" />
+    <meta property="og:image" content="/IA-Labs-Logo-Dark (1).png" />
+    <meta property="og:site_name" content="IA-Labs" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IA-Labs - Premium Web Development & SaaS Solutions" />
+    <meta name="twitter:description" content="Build your digital future with IA-Labs. We craft stunning websites and powerful SaaS solutions with one-time payments and premium fast-track delivery." />
+    <meta name="twitter:image" content="/IA-Labs-Logo-Dark (1).png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/IA-Labs-Logo-Dark (1).png?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/IA-Labs-Logo-Dark (1).png?v=3" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/IA-Labs-Logo-Dark (1).png?v=3" />
+    <link rel="shortcut icon" href="/IA-Labs-Logo-Dark (1).png?v=3" />
+    <link rel="manifest" href="/manifest.json?v=3" />
+    
+    <!-- Preload Resources -->
+    <link rel="preload" as="image" href="/hero_files/image1.png" />
+    <link rel="preload" as="image" href="/IA-Labs-Logo-Dark (1).png" />
+    <link rel="preload" as="image" href="/IA-Labs-Logo-Light (1).png" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "IA-Labs",
+      "description": "Premium web development and SaaS solutions with one-time payments and fast-track delivery",
+      "url": "https://ia-labs.com",
+      "logo": "https://ia-labs.com/IA-Labs-Logo-Dark (1).png",
+      "sameAs": [
+        "https://linkedin.com/company/ia-labs",
+        "https://twitter.com/ialabs"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": "English"
+      },
+      "service": [
+        {
+          "@type": "Service",
+          "name": "Custom Website Development",
+          "description": "Beautiful, responsive websites tailored to your brand and business needs"
+        },
+        {
+          "@type": "Service", 
+          "name": "SaaS Solutions",
+          "description": "Powerful software as a service platforms to streamline your business operations"
+        },
+        {
+          "@type": "Service",
+          "name": "Fast-Track Delivery",
+          "description": "Premium express service that delivers your project in record time"
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <script>
+      // Immediately apply theme from localStorage or default to dark
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const theme = savedTheme || 'dark';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        // Save default theme if none exists
+        if (!savedTheme) {
+          localStorage.setItem('theme', 'dark');
+        }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
