@@ -231,6 +231,11 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.3;
+  max-width: 100%;
 }
 
 .services-package-card:hover .services-package-name {
@@ -617,6 +622,11 @@
 
   .services-package-name {
     font-size: 1.8rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.3;
+    max-width: 100%;
   }
 
   .services-package-price {
@@ -776,6 +786,9 @@
   .services-package-card {
     padding: 1.5rem;
     margin: 0 0.5rem;
+    max-width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
   }
 
   .services-tier3-special {
@@ -786,6 +799,16 @@
   .services-package-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+  }
+
+  .services-package-name {
+    font-size: 1.2rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    line-height: 1.2 !important;
+    max-width: 100% !important;
+    letter-spacing: 0.02em !important;
   }
 
   .services-package-title {
@@ -925,6 +948,71 @@
   .services-hero-subtitle {
     font-size: 0.85rem;
     margin-bottom: 1.5rem;
+  }
+
+  .services-package-name {
+    font-size: 1.1rem !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    hyphens: auto !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.01em !important;
+    max-width: 100% !important;
+  }
+
+  .services-package-card {
+    padding: 1.2rem !important;
+    margin: 0 0.3rem !important;
+    max-width: calc(100vw - 2rem) !important;
+    overflow: hidden !important;
+    word-wrap: break-word !important;
+  }
+
+  .services-package-header {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Extra Extra Small Mobile - Below 370px */
+@media (max-width: 369px) {
+  .services-package-name {
+    font-size: 1rem !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+    hyphens: auto !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0px !important;
+    text-transform: none !important;
+  }
+
+  .services-package-card {
+    padding: 1rem !important;
+    margin: 0 0.2rem !important;
+    max-width: calc(100vw - 1rem) !important;
+  }
+}
+
+/* Ultra Small Mobile - Below 350px */
+@media (max-width: 349px) {
+  .services-package-name {
+    font-size: 0.9rem !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+    line-height: 1.0 !important;
+    letter-spacing: -0.01em !important;
+    text-transform: none !important;
+  }
+
+  .services-package-card {
+    padding: 0.8rem !important;
+    margin: 0 0.1rem !important;
+    max-width: calc(100vw - 0.5rem) !important;
+    border-radius: 15px !important;
+  }
+
+  .services-package-header {
+    margin-bottom: 1rem !important;
   }
 }
 
